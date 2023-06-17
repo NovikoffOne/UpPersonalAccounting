@@ -1,0 +1,8 @@
+D:\CSharp\IUNIOR\DZ\UpPersonalAccounting\bin\Debug\UpPersonalAccounting.exe.config
+D:\CSharp\IUNIOR\DZ\UpPersonalAccounting\bin\Debug\UpPersonalAccounting.exe
+D:\CSharp\IUNIOR\DZ\UpPersonalAccounting\bin\Debug\UpPersonalAccounting.pdb
+D:\CSharp\IUNIOR\DZ\UpPersonalAccounting\obj\Debug\UpPersonalAccounting.csproj.AssemblyReference.cache
+D:\CSharp\IUNIOR\DZ\UpPersonalAccounting\obj\Debug\UpPersonalAccounting.csproj.SuggestedBindingRedirects.cache
+D:\CSharp\IUNIOR\DZ\UpPersonalAccounting\obj\Debug\UpPersonalAccounting.csproj.CoreCompileInputs.cache
+D:\CSharp\IUNIOR\DZ\UpPersonalAccounting\obj\Debug\UpPersonalAccounting.exe
+D:\CSharp\IUNIOR\DZ\UpPersonalAccounting\obj\Debug\UpPersonalAccounting.pdb
