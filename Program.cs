@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UpPersonalAccounting
 {
@@ -11,9 +8,8 @@ namespace UpPersonalAccounting
         static void Main(string[] args)
         {
             bool isWork = true;
-            int userInput = 0;
 
-            Dictionary<string, string> dossier = new Dictionary<string, string>()
+            Dictionary<string, string> dossiers = new Dictionary<string, string>()
             {
                 ["Ананьев Евгений Сергеевич"] = "Крановщик",
                 ["Жерандол Екатерина Гигорьевна"] = "Повар",
@@ -23,29 +19,31 @@ namespace UpPersonalAccounting
 
             while (isWork)
             {
-                Work(userInput, dossier, ref isWork);
+                Work(dossiers,ref isWork);
                 Console.Clear();
             }
         }
 
-        static void DrawMenu(int addingDossier, int withdrawDossiers, int deleteDossiers, int exit)
+        static void DrawMenu(int addingDossier, int withdrawDossiers, int deleteDossier, int exit)
         {
             Console.WriteLine
 
                 ($"{addingDossier} - Добавить досье.\n" +
                 $"{withdrawDossiers} - Выести все досье.\n" +
-                $"{deleteDossiers} - Удалить досье.\n" +
+                $"{deleteDossier} - Удалить досье.\n" +
                 $"{exit} - Выход.");
         }
 
-        static void Work(int userInput, Dictionary<string, string> dossier, ref bool isWork)
+        static void Work(Dictionary<string, string> dossiers, ref bool isWork)
         {
-            const int AddingDossier = 1;
-            const int WithdrawDossiers = 2;
-            const int DeleteDossiers = 3;
-            const int Exit = 4;
+            const int AddingDossierCommand = 1;
+            const int WithdrawDossiersCommand = 2;
+            const int DeleteDossierCommand = 3;
+            const int ExitCommand = 4;
 
-            DrawMenu(AddingDossier, WithdrawDossiers, DeleteDossiers, Exit);
+            int userInput;
+
+            DrawMenu(AddingDossierCommand, WithdrawDossiersCommand, DeleteDossierCommand, ExitCommand);
 
             if (int.TryParse(Console.ReadLine(), out int result))
                 userInput = result;
@@ -54,20 +52,20 @@ namespace UpPersonalAccounting
 
             switch (userInput)
             {
-                case AddingDossier:
-                    AddDossier(dossier);
+                case AddingDossierCommand:
+                    AddDossier(dossiers);
                     break;
 
-                case WithdrawDossiers:
-                    ShowDossier(dossier);
+                case WithdrawDossiersCommand:
+                    ShowDossier(dossiers);
                     break;
 
-                case DeleteDossiers:
-                    RemoveDossier(dossier);
+                case DeleteDossierCommand:
+                    RemoveDossier(dossiers);
                     break;
 
-                case Exit:
-                    ExitProgramm(ref isWork);
+                case ExitCommand:
+                    isWork = ExitProgramm();
                     break;
 
                 default:
@@ -124,12 +122,12 @@ namespace UpPersonalAccounting
             }
         }
 
-        static void ExitProgramm(ref bool isWork)
+        static bool ExitProgramm()
         {
             Console.WriteLine("Довстречи!!!");
             Console.ReadKey();
 
-            isWork = false;
+            return false;
         }
     }
 }
